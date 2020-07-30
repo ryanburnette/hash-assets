@@ -1,0 +1,19 @@
+{
+  "name": "@ryanburnette/asset-hash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "hash": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanburnette/asset-hash.git"
+  },
+  "author": "Ryan Burnette",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "walk": "^2.3.14"
+  }
+}
