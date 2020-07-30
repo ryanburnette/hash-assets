@@ -11,7 +11,14 @@ An asset hash script for static websites.
 - update all the references to the file
 - works in place, so make a copy before calling if that matters
 
-```js
-#!/usr/bin/env node
-require('@ryanburnette/asset-hash')('./public');
+## Install
+
+```bash
+npm install -g @ryanburnette/asset-hash
+```
+
+## Use
+
+```
+assethash public/
 ```
