@@ -1,6 +1,6 @@
 {
   "name": "@ryanburnette/asset-hash",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   "author": "Ryan Burnette",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
     "walk": "^2.3.14"
   }
 }

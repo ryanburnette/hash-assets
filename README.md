@@ -9,6 +9,8 @@ An asset hash script for static websites.
 - rename the file with the hash
 - gz the file in place for web servers that support precompressed assets
 - update all the references to the file
+- requires that all references be made from `/`, no relative references, TODO
+  improve
 - works in place, so make a copy before calling if that matters
 
 ## Install
@@ -22,3 +24,8 @@ npm install -g @ryanburnette/asset-hash
 ```
 assethash public/
 ```
+
+## Warning
+
+I reference all my assets relative to root. This library expects that and will
+break if you aren't doing the same.
