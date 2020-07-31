@@ -1,10 +1,14 @@
 {
   "name": "@ryanburnette/asset-hash",
-  "version": "0.1.1",
+  "version": "0.7.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "hash-assets": "bin/hash-assets"
+  },
   "scripts": {
-    "assethash": "index.js"
+    "test": "test.sh",
+    "hash-assets": "bin/hash-assets"
   },
   "repository": {
     "type": "git",
