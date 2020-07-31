@@ -98,3 +98,5 @@ Complete.
 I reference all my assets absolutely from root `/`, which is what is best tested.
 
 This library should also handle child-relative references `./`, but not parent-relative references `../`.
+
+This DOES NOT respect [`<base>` urls](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base).
