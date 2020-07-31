@@ -3,7 +3,7 @@
 var path = require('path');
 var fs = require('fs');
 var walk = require('walk');
-var crypto = require('crypto');
+var createHashFromFile = require('./lib/create-hash-from-file');
 
 var assetsExts = ['.js', '.css'];
 var htmlExts = ['.html'];
@@ -101,15 +101,6 @@ function assetHash(dir) {
           });
       }, Promise.resolve());
     });
-}
-
-async function createHashFromFile(filePath) {
-  return new Promise(resolve => {
-    const hash = crypto.createHash('sha1');
-    fs.createReadStream(filePath)
-      .on('data', data => hash.update(data))
-      .on('end', () => resolve(hash.digest('hex')));
-  });
 }
 
 module.exports = assetHash;
