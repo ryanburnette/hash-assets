@@ -9,7 +9,6 @@ var assetsExts = ['.js', '.css'];
 var htmlExts = ['.html'];
 
 function assetHash(dir) {
-  console.log(dir);
   var assets = [];
   var documents = [];
 
