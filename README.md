@@ -9,8 +9,10 @@ An script for asset hash script for static websites.
 - rename the file with the hash
 - gz the file in place for web servers that support precompressed assets
 - update all the references to the file
-- requires that all references be made from `/`, no relative references
-  - TODO improve
+- references be made
+  - absolute from `/`, such as `/css/main.css`
+  - children relative from `.`, such as `css/main.css` or `./css/main.css`
+  - NOT relative from parents `..`, such as `../css/main.css`
 - **rewrites in place**, so make a copy before calling if that matters
 
 ## Usage
@@ -93,5 +95,6 @@ Complete.
 
 ## Warning
 
-I reference all my assets relative to root. This library expects that and will
-break if you aren't doing the same.
+I reference all my assets absolutely from root `/`, which is what is best tested.
+
+This library should also handle child-relative references `./`, but not parent-relative references `../`.
