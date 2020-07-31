@@ -59,7 +59,10 @@ function assetHash(dir) {
         walker.on('file', function (root, stats, next) {
           if (stats.type === 'file') {
             var filepath = path.join(root, stats.name);
-            var refpath = '/' + path.join(root.replace(dir, ''), stats.name);
+            var refpath = path.join(
+              root.replace(dir, '').replace('/', ''),
+              stats.name
+            );
             var ext = path.extname(filepath);
             if (htmlExts.includes(ext)) {
               documents.push({
@@ -93,7 +96,7 @@ function assetHash(dir) {
                 return fs.promises.writeFile(doc.filepath, data);
               })
               .then(function () {
-                console.log('HASHED REFS', doc.filepath);
+                console.log('HASHED REFS', doc.refpath);
               });
           });
       }, Promise.resolve());
