@@ -44,7 +44,7 @@ async function hashAll(cwd, dirname) {
 async function replaceAll(cwd, dirname) {
   var replaceable = ['.html'];
 
-  return new Promise(async function (resolve) {
+  return new Promise(function (resolve) {
     var walker = walk.walk(dirname);
     walker.on('file', function (root, stats, next) {
       console.log('cwd', cwd, 'root', root, 'rel', stats.name);
