@@ -7,7 +7,7 @@
     "hash-assets": "bin/hash-assets"
   },
   "scripts": {
-    "test": "test.sh",
+    "test": "bash test.sh",
     "hash-assets": "bin/hash-assets"
   },
   "repository": {
