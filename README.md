@@ -66,6 +66,31 @@ hashAssets(siteroot)
   });
 ```
 
+## Example
+
+```bash
+rsync -a --delete ./test/html_/ ./test/html/
+hash-assets test/html
+```
+
+```txt
+Working from '/Users/me/github.com/ryanburnette/asset-hash/test/html'
+
+Renamed:
+        '/js/main.js' => '/js/main.b58d988070d02e44d27a6b019e23a1665bd1f790.js'
+        '/foo/js/main.js' => '/foo/js/main.b58d988070d02e44d27a6b019e23a1665bd1f790.js'
+        '/foo/css/style.css' => '/foo/css/style.e0bc30e345c7b5fc33f2186bd2a8d387b088e1eb.css'
+        '/css/style.css' => '/css/style.e0bc30e345c7b5fc33f2186bd2a8d387b088e1eb.css'
+
+Rewrote urls in each of:
+        '/absolute.html'
+        '/relative.html'
+        '/foo/absolute.html'
+        '/foo/relative.html'
+
+Complete.
+```
+
 ## Warning
 
 I reference all my assets relative to root. This library expects that and will
