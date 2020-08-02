@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+"use strict";
+
+var path = require("path");
+var hashAssets = require("../index.js");
+var siteroot = process.argv[2] || "";
+//var siterel = process.argv[3] || "";
+
+if (!siteroot || "-" === siteroot[0] || "help" === siteroot) {
+  console.error("Usage:   assethash <site root>");
+  console.error("Example: assethash ./sites/example.com/public");
+  if (!siteroot) {
+    process.exit(1);
+  } else {
+    process.exit(0);
+  }
+}
+
+async function main() {
+  siteroot = path.normalize(path.resolve(siteroot + "/"));
+
+  console.info("\nWorking from '%s'", siteroot);
+  return hashAssets(siteroot).then(function (changes) {
+    console.info("\nRenamed:");
+    Object.keys(changes.renamed).forEach(function (name) {
+      console.info("\t'%s' => '%s'", name, changes.renamed[name]);
+    });
+    console.info("\nRewrote urls in each of:");
+    changes.rewritten.forEach(function (name) {
+      console.info("\t'%s'", name);
+    });
+  });
+}
+
+main()
+  .then(function () {
+    console.info("\nComplete.\n");
+  })
+  .catch(function (err) {
+    console.error("Error:", err.message);
+  });
