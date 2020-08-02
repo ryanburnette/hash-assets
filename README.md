@@ -2,7 +2,7 @@
 
 [![repo](https://img.shields.io/badge/repository-Github-black.svg?style=flat-square)](https://github.com/ryanburnette/asset-hash) [![npm](https://img.shields.io/badge/package-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/asset-hash)
 
-An script for asset hash script for static websites.
+Hash assets for static websites.
 
 - works in .css and .js files
 - find the hash of a given file

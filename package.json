@@ -1,7 +1,7 @@
 {
-  "name": "@ryanburnette/asset-hash",
+  "name": "@ryanburnette/hash-assets",
   "version": "0.8.0",
-  "description": "",
+  "description": "Hash assets for static websites.",
   "main": "index.js",
   "bin": {
     "hash-assets": "bin/hash-assets"
