@@ -1,20 +1,4 @@
 {
   "node": true,
-  "browser": true,
-  "jquery": true,
-  "globals": { "angular": true, "Promise": true },
-  "esversion": 8,
-
-  "indent": 2,
-  "onevar": true,
-  "laxcomma": true,
-  "laxbreak": true,
-  "curly": true,
-  "nonbsp": true,
-
-  "eqeqeq": true,
-  "immed": true,
-  "undef": true,
-  "unused": true,
-  "latedef": true
+  "esversion": 8
 }

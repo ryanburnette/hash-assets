@@ -1,6 +1,6 @@
 {
   "name": "@ryanburnette/hash-assets",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "Hash assets for static websites.",
   "main": "index.js",
   "bin": {
@@ -17,6 +17,7 @@
   "author": "Ryan Burnette",
   "license": "ISC",
   "dependencies": {
+    "to-regex": "^3.0.2",
     "walk": "^2.3.14"
   }
 }
