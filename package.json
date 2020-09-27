@@ -1,6 +1,6 @@
 {
   "name": "@ryanburnette/hash-assets",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Hash assets for static websites.",
   "main": "index.js",
   "bin": {
