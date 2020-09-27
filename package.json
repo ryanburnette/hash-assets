@@ -1,6 +1,6 @@
 {
   "name": "@ryanburnette/hash-assets",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hash assets for static websites.",
   "main": "index.js",
   "bin": {
@@ -12,8 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://git.ryanburnette.com/ryanburnette/hash-assets.git"
+    "url": "https://git.ryanburnette.com/ryanburnette/hash-assets.git"
   },
+  "homepage": "https://git.ryanburnette.com/ryanburnette/hash-assets",
   "author": "Ryan Burnette",
   "license": "ISC",
   "dependencies": {
