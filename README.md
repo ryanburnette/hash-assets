@@ -24,24 +24,21 @@ You can use hash-assets as a command line tool, or as a JavaScript library.
 ### CLI
 
 ```bash
-npm install -g @ryanburnette/asset-hash
-```
-
-```bash
+npm install -g @ryanburnette/hash-assets
 hash-assets public/
 ```
 
 ### CLI (npx)
 
 ```bash
-npm install --save @ryanburnette/asset-hash
+npm install --save @ryanburnette/hash-assets
 npx hash-assets public/
 ```
 
 ### Library
 
 ```bash
-npm install --save @ryanburnette/asset-hash
+npm install --save @ryanburnette/hash-assets
 ```
 
 ```js
@@ -78,7 +75,7 @@ hash-assets test/html
 ```
 
 ```txt
-Working from '/Users/me/github.com/ryanburnette/asset-hash/test/html'
+Working from '/Users/me/github.com/ryanburnette/hash-assets/test/html'
 
 Renamed:
         '/js/main.js' => '/js/main.b58d988070d02e44d27a6b019e23a1665bd1f790.js'
