@@ -1,19 +1,21 @@
-# [hash-assets](https://git.ryanburnette.com/ryanburnette/hash-assets)
+# [hash-assets](https://github.com/ryanburnette/hash-assets)
 
-[![repo](https://img.shields.io/badge/repo-Gitea-black.svg?style=flat-square)](https://git.ryanburnette.com/ryanburnette/hash-assets) [![npm](https://img.shields.io/badge/pkg-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/hash-assets)
+[![repo](https://img.shields.io/badge/repo-Gitea-black.svg?style=flat-square)](https://github.com/ryanburnette/hash-assets) [![npm](https://img.shields.io/badge/pkg-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/hash-assets)
 
 Hash assets for static websites.
 
-- works in .css and .js files
-- find the hash of a given file
-- rename the file with the hash
-- gz the file in place for web servers that support precompressed assets
-- update all the references to the file
-- references be made
-  - absolute from `/`, such as `/css/main.css`
-  - children relative from `.`, such as `css/main.css` or `./css/main.css`
-  - NOT relative from parents `..`, such as `../css/main.css`
-- **rewrites in place**, so make a copy before calling if that matters
+## Features
+
+- works on .css and .js files
+- finds the hash of a given file
+- renames the file to include the hash
+- update all .html file references to hashed .css and .js files with hashed filename
+- support absolute references, ie. `/css/main.css`
+- support children relative from `.`, ie. `css/main.css` or `./css/main.css`
+- **WARNING** does not support relative from parents `..`, such as
+  `../css/main.css` 
+- **WARNING** rewrites in place, so make a copy before calling if that matters
+- TODO gz the file in place for web servers that support precompressed assets
 
 ## Usage
 
@@ -29,14 +31,14 @@ npm install -g @ryanburnette/asset-hash
 hash-assets public/
 ```
 
-With `npx`:
+### CLI (npx)
 
 ```bash
 npm install --save @ryanburnette/asset-hash
 npx hash-assets public/
 ```
 
-### JS
+### Library
 
 ```bash
 npm install --save @ryanburnette/asset-hash
@@ -93,10 +95,18 @@ Rewrote urls in each of:
 Complete.
 ```
 
-## Warning
+## Warnings
 
-I reference all my assets absolutely from root `/`, which is what is best tested.
+In my own projects I reference all assets relative to root. Other approaches
+are not currently being tested.
 
-This library should also handle child-relative references `./`, but not parent-relative references `../`.
+This library should also handle child-relative references `./`.
 
-This DOES NOT respect [`<base>` urls](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base).
+This library does not a handle parent-relative references `../`.
+
+This library does not respect [`<base>`
+urls](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base).
+
+I use this library as a build step, so it rewrites in place.
+
+Pull requests are welcomed.
