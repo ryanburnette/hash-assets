@@ -1,6 +1,6 @@
 # [hash-assets](https://github.com/ryanburnette/hash-assets)
 
-[![repo](https://img.shields.io/badge/repo-Gitea-black.svg?style=flat-square)](https://github.com/ryanburnette/hash-assets) [![npm](https://img.shields.io/badge/pkg-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/hash-assets)
+[![repo](https://img.shields.io/badge/repo-Github-black.svg?style=flat-square)](https://github.com/ryanburnette/hash-assets) [![npm](https://img.shields.io/badge/pkg-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/hash-assets)
 
 Hash assets for static websites.
 
