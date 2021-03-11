@@ -1,69 +1,75 @@
 # [hash-assets](https://github.com/ryanburnette/hash-assets)
 
-[![repo](https://img.shields.io/badge/repo-Github-black.svg?style=flat-square)](https://github.com/ryanburnette/hash-assets) [![npm](https://img.shields.io/badge/pkg-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/hash-assets)
+[![repo](https://img.shields.io/badge/repo-Github-black.svg?style=flat-square)](https://github.com/ryanburnette/hash-assets)
+[![npm](https://img.shields.io/badge/pkg-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/hash-assets)
 
 Hash assets for static websites.
 
 ## Features
 
-- works on .css and .js files
-- finds the hash of a given file
-- renames the file to include the hash
-- update all .html file references to hashed .css and .js files with hashed filename
-- support absolute references, ie. `/css/main.css`
-- support children relative from `.`, ie. `css/main.css` or `./css/main.css`
+- recursively hashes the filenames of all `.css` and `.js` files and updates
+  refererences in the `.html` files
+- supports absolute references, ie. `/css/main.css`
+- supports children relative from `.`, ie. `css/main.css` or `./css/main.css`
 - **WARNING** does not support relative from parents `..`, such as
-  `../css/main.css` 
-- **WARNING** rewrites in place, so make a copy before calling if that matters
-- TODO gz the file in place for web servers that support precompressed assets
+  `../css/main.css`
+- **WARNING** does not respect
+  [`<base>` urls](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base).
+- **WARNING** cli helper updates files in place
 
-## Usage
+## TODO
 
-You can use hash-assets as a command line tool, or as a JavaScript library.
+- gzip assets for web servers that support precompressed assets
 
-### CLI
+### cli
 
 ```bash
 npm install -g @ryanburnette/hash-assets
+```
+
+```bash
 hash-assets public/
 ```
 
-### CLI (npx)
+### npx
 
 ```bash
-npm install --save @ryanburnette/hash-assets
+npm install @ryanburnette/hash-assets
+```
+
+```bash
 npx hash-assets public/
 ```
 
-### Library
+### js
 
 ```bash
-npm install --save @ryanburnette/hash-assets
+npm install @ryanburnette/hash-assets
 ```
 
 ```js
-"use strict";
+'use strict';
 
-var hashAssets = require("../index.js");
-var siteroot = "/home/me/sites/example.com/public/";
+var hashAssets = require('../index.js');
+var siteroot = '/home/me/sites/example.com/public/';
 
 console.info("\nWorking from '%s'", siteroot);
 hashAssets(siteroot)
   .then(function (changes) {
-    console.info("\nRenamed:");
+    console.info('\nRenamed:');
     Object.keys(changes.renamed).forEach(function (name) {
       console.info("\t'%s' => '%s'", name, changes.renamed[name]);
     });
-    console.info("\nRewrote urls in each of:");
+    console.info('\nRewrote urls in each of:');
     changes.rewritten.forEach(function (name) {
       console.info("\t'%s'", name);
     });
   })
   .then(function () {
-    console.info("\nComplete.\n");
+    console.info('\nComplete.\n');
   })
   .catch(function (err) {
-    console.error("something bad happened", err);
+    console.error('something bad happened', err);
   });
 ```
 
@@ -91,19 +97,3 @@ Rewrote urls in each of:
 
 Complete.
 ```
-
-## Warnings
-
-In my own projects I reference all assets relative to root. Other approaches
-are not currently being tested.
-
-This library should also handle child-relative references `./`.
-
-This library does not a handle parent-relative references `../`.
-
-This library does not respect [`<base>`
-urls](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base).
-
-I use this library as a build step, so it rewrites in place.
-
-Pull requests are welcomed.
