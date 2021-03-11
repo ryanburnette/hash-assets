@@ -21,7 +21,7 @@ Hash assets for static websites.
 
 - gzip assets for web servers that support precompressed assets
 
-### cli
+## cli
 
 ```bash
 npm install -g @ryanburnette/hash-assets
@@ -31,7 +31,7 @@ npm install -g @ryanburnette/hash-assets
 hash-assets public/
 ```
 
-### npx
+## npx
 
 ```bash
 npm install @ryanburnette/hash-assets
@@ -41,7 +41,7 @@ npm install @ryanburnette/hash-assets
 npx hash-assets public/
 ```
 
-### js
+## js
 
 ```bash
 npm install @ryanburnette/hash-assets
