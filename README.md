@@ -17,7 +17,7 @@ Hash assets for static websites.
   [`<base>` urls](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base).
 - **WARNING** cli helper updates files in place
 
-## TODO
+## todo
 
 - gzip assets for web servers that support precompressed assets
 
